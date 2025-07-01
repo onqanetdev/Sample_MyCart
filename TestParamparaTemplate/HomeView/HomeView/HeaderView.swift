@@ -1,0 +1,264 @@
+//
+//  HeaderView.swift
+//  TestParamparaTemplate
+//
+//  Created by Onqanet on 30/06/25.
+//
+
+import UIKit
+
+class HeaderView: UIView {
+    
+    // MARK: - UI Components
+    private let containerView = UIView()
+    private let hamburgerButton = UIButton(type: .system)
+    private let cartButton = UIButton(type: .system)
+    private let bellButton = UIButton(type: .system)
+    private let deliveryLabel = UILabel()
+    private let addressLabel = UILabel()
+    private let searchBar = UIView()
+    private let searchTextField = UITextField()
+    private let searchIconImageView = UIImageView()
+    
+    private let locationView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(named: "pin_img")
+        return imageView
+    }()
+    
+    private let backgroundImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.image = UIImage(named: "header_background")
+        return imageView
+    }()
+    
+    
+    
+    
+    // MARK: - Initialization
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupView()
+        setupConstraints()
+        configureAppearance()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setupView()
+        setupConstraints()
+        configureAppearance()
+    }
+    
+    // MARK: - Setup Methods
+    private func setupView() {
+        //backgroundColor = UIColor(red: 0.7, green: 0.6, blue: 0.8, alpha: 1.0) // Purple gradient color
+        
+        backgroundColor = .clear
+        
+        addSubview(containerView)
+        
+        
+        containerView.addSubview(backgroundImageView)
+        
+        
+        containerView.addSubview(hamburgerButton)
+        containerView.addSubview(cartButton)
+        containerView.addSubview(bellButton)
+        containerView.addSubview(deliveryLabel)
+        containerView.addSubview(addressLabel)
+        containerView.addSubview(searchBar)
+        
+        containerView.addSubview(locationView)
+        
+        searchBar.addSubview(searchTextField)
+        searchBar.addSubview(searchIconImageView)
+        
+        // Configure buttons
+        setupButtons()
+        setupLabels()
+        setupSearchBar()
+    }
+    
+    private func setupButtons() {
+        // Hamburger menu button
+        hamburgerButton.setImage(UIImage(systemName: "line.horizontal.3"), for: .normal)
+        hamburgerButton.tintColor = .white
+        hamburgerButton.addTarget(self, action: #selector(hamburgerTapped), for: .touchUpInside)
+        
+        // Cart button
+        cartButton.setImage(UIImage(systemName: "cart"), for: .normal)
+        cartButton.tintColor = .white
+        cartButton.addTarget(self, action: #selector(cartTapped), for: .touchUpInside)
+        
+        // Bell button
+        bellButton.setImage(UIImage(systemName: "bell"), for: .normal)
+        bellButton.tintColor = .white
+        bellButton.addTarget(self, action: #selector(bellTapped), for: .touchUpInside)
+    }
+    
+    private func setupLabels() {
+        // Delivery label
+        deliveryLabel.text = "Delivery in 10 Minutes"
+        deliveryLabel.font = UIFont.boldSystemFont(ofSize: 18)
+        deliveryLabel.textColor = .black
+        
+        // Address label
+        addressLabel.text = "WORK - 903, 9th Floor, Primarc Tower"
+        addressLabel.font = UIFont.systemFont(ofSize: 14)
+        addressLabel.textColor = UIColor.white.withAlphaComponent(0.9)
+        addressLabel.numberOfLines = 1
+    }
+    
+    private func setupSearchBar() {
+        searchBar.backgroundColor = UIColor.white.withAlphaComponent(0.2)
+        //searchBar.backgroundColor = UIColor.gray
+        searchBar.layer.cornerRadius = 25
+        searchBar.layer.masksToBounds = true
+        
+        // Search text field
+        searchTextField.placeholder = "Let's search your needs"
+        searchTextField.textColor = .white
+        searchTextField.font = UIFont.systemFont(ofSize: 16)
+        searchTextField.borderStyle = .none
+        searchTextField.backgroundColor = .clear
+        
+        // Placeholder color
+        searchTextField.attributedPlaceholder = NSAttributedString(
+            string: "Let's search your needs",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.white.withAlphaComponent(0.7)]
+        )
+        
+        // Search icon
+        searchIconImageView.image = UIImage(systemName: "magnifyingglass")
+        searchIconImageView.tintColor = UIColor.white.withAlphaComponent(0.7)
+        searchIconImageView.contentMode = .scaleAspectFit
+    }
+    
+    private func setupConstraints() {
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        hamburgerButton.translatesAutoresizingMaskIntoConstraints = false
+        cartButton.translatesAutoresizingMaskIntoConstraints = false
+        bellButton.translatesAutoresizingMaskIntoConstraints = false
+        deliveryLabel.translatesAutoresizingMaskIntoConstraints = false
+        addressLabel.translatesAutoresizingMaskIntoConstraints = false
+        searchBar.translatesAutoresizingMaskIntoConstraints = false
+        searchTextField.translatesAutoresizingMaskIntoConstraints = false
+        searchIconImageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            
+            backgroundImageView.topAnchor.constraint(equalTo: containerView.topAnchor),
+            backgroundImageView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+            backgroundImageView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
+            backgroundImageView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
+            
+            
+            
+            
+            // Container view
+            containerView.topAnchor.constraint(equalTo: topAnchor),
+            containerView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            containerView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            containerView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            
+            // Hamburger button
+            hamburgerButton.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16),
+            hamburgerButton.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 56),
+            hamburgerButton.widthAnchor.constraint(equalToConstant: 24),
+            hamburgerButton.heightAnchor.constraint(equalToConstant: 24),
+            
+            // Cart button
+            cartButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16),
+            cartButton.centerYAnchor.constraint(equalTo: hamburgerButton.centerYAnchor),
+            cartButton.widthAnchor.constraint(equalToConstant: 24),
+            cartButton.heightAnchor.constraint(equalToConstant: 24),
+            
+            // Bell button
+            bellButton.trailingAnchor.constraint(equalTo: cartButton.leadingAnchor, constant: -16),
+            bellButton.centerYAnchor.constraint(equalTo: hamburgerButton.centerYAnchor),
+            bellButton.widthAnchor.constraint(equalToConstant: 24),
+            bellButton.heightAnchor.constraint(equalToConstant: 24),
+            
+            // Delivery label
+            deliveryLabel.leadingAnchor.constraint(equalTo: hamburgerButton.trailingAnchor, constant: 16),
+            deliveryLabel.topAnchor.constraint(equalTo: hamburgerButton.bottomAnchor, constant: -44),
+            deliveryLabel.trailingAnchor.constraint(lessThanOrEqualTo: bellButton.leadingAnchor, constant: -8),
+            
+            //Location View
+            locationView.leadingAnchor.constraint(equalTo: hamburgerButton.leadingAnchor, constant: 16),
+            locationView.topAnchor.constraint(equalTo: deliveryLabel.bottomAnchor, constant: -50),
+            locationView.widthAnchor.constraint(equalToConstant: 20),
+            locationView.heightAnchor.constraint(equalToConstant: 20),
+            
+            
+            
+            // Address label
+            addressLabel.leadingAnchor.constraint(equalTo: locationView.trailingAnchor, constant: 6),
+            addressLabel.topAnchor.constraint(equalTo: deliveryLabel.bottomAnchor, constant: -50),
+            addressLabel.trailingAnchor.constraint(lessThanOrEqualTo: containerView.trailingAnchor, constant: -16),
+            
+            // Search bar
+            searchBar.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16),
+            searchBar.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16),
+            searchBar.topAnchor.constraint(equalTo: addressLabel.bottomAnchor, constant: 20),
+            searchBar.heightAnchor.constraint(equalToConstant: 50),
+            searchBar.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -16),
+            
+            // Search text field
+            searchTextField.leadingAnchor.constraint(equalTo: searchBar.leadingAnchor, constant: 20),
+            searchTextField.centerYAnchor.constraint(equalTo: searchBar.centerYAnchor),
+            searchTextField.trailingAnchor.constraint(equalTo: searchIconImageView.leadingAnchor, constant: -12),
+            
+            // Search icon
+            searchIconImageView.trailingAnchor.constraint(equalTo: searchBar.trailingAnchor, constant: -20),
+            searchIconImageView.centerYAnchor.constraint(equalTo: searchBar.centerYAnchor),
+            searchIconImageView.widthAnchor.constraint(equalToConstant: 20),
+            searchIconImageView.heightAnchor.constraint(equalToConstant: 20)
+        ])
+    }
+    
+    private func configureAppearance() {
+        // Add gradient background
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [
+            UIColor(red: 0.8, green: 0.7, blue: 0.9, alpha: 1.0).cgColor,
+            UIColor(red: 0.7, green: 0.6, blue: 0.8, alpha: 1.0).cgColor
+        ]
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 1, y: 1)
+        gradientLayer.frame = bounds
+        layer.insertSublayer(gradientLayer, at: 0)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        // Update gradient frame when view layout changes
+        if let gradientLayer = layer.sublayers?.first as? CAGradientLayer {
+            gradientLayer.frame = bounds
+        }
+    }
+    
+    // MARK: - Action Methods
+    @objc private func hamburgerTapped() {
+        print("Hamburger menu tapped")
+        // Add your hamburger menu action here
+    }
+    
+    @objc private func cartTapped() {
+        print("Cart tapped")
+        // Add your cart action here
+    }
+    
+    @objc private func bellTapped() {
+        print("Bell notification tapped")
+        // Add your notification action here
+    }
+}
+
+
+
