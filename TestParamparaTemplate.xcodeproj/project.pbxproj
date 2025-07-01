@@ -20,6 +20,10 @@
 		8AA450BC2E0E945000CAB77B /* HomeOneCellTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA450BA2E0E945000CAB77B /* HomeOneCellTwo.swift */; };
 		8AA450BD2E0E945000CAB77B /* HomeOneCellTwo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AA450BB2E0E945000CAB77B /* HomeOneCellTwo.xib */; };
 		8AA450C02E0EBAEF00CAB77B /* UIImage+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA450BF2E0EBAEF00CAB77B /* UIImage+Extenstion.swift */; };
+		8AC2FA032E13A3E8006E0C6E /* HomeViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC2FA022E13A3E8006E0C6E /* HomeViewController+Extension.swift */; };
+		8AC2FA052E13A4BC006E0C6E /* TypesOfProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC2FA042E13A4BC006E0C6E /* TypesOfProducts.swift */; };
+		8AC2FA082E13A98A006E0C6E /* TypeOfProdCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AC2FA072E13A98A006E0C6E /* TypeOfProdCollectionViewCell.xib */; };
+		8AC2FA092E13A98A006E0C6E /* TypeOfProdCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC2FA062E13A98A006E0C6E /* TypeOfProdCollectionViewCell.swift */; };
 		8AD7CA1E2E0E6C7E006881BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD7CA1D2E0E6C7E006881BA /* AppDelegate.swift */; };
 		8AD7CA202E0E6C7E006881BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD7CA1F2E0E6C7E006881BA /* SceneDelegate.swift */; };
 		8AD7CA222E0E6C7E006881BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD7CA212E0E6C7E006881BA /* ViewController.swift */; };
@@ -44,6 +48,10 @@
 		8AA450BA2E0E945000CAB77B /* HomeOneCellTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeOneCellTwo.swift; sourceTree = "<group>"; };
 		8AA450BB2E0E945000CAB77B /* HomeOneCellTwo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeOneCellTwo.xib; sourceTree = "<group>"; };
 		8AA450BF2E0EBAEF00CAB77B /* UIImage+Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extenstion.swift"; sourceTree = "<group>"; };
+		8AC2FA022E13A3E8006E0C6E /* HomeViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+Extension.swift"; sourceTree = "<group>"; };
+		8AC2FA042E13A4BC006E0C6E /* TypesOfProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypesOfProducts.swift; sourceTree = "<group>"; };
+		8AC2FA062E13A98A006E0C6E /* TypeOfProdCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeOfProdCollectionViewCell.swift; sourceTree = "<group>"; };
+		8AC2FA072E13A98A006E0C6E /* TypeOfProdCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TypeOfProdCollectionViewCell.xib; sourceTree = "<group>"; };
 		8AD7CA1A2E0E6C7E006881BA /* TestParamparaTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestParamparaTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AD7CA1D2E0E6C7E006881BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AD7CA1F2E0E6C7E006881BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				8A7F10582E12708C0086F5E0 /* FoodTopBannerModel.swift */,
+				8AC2FA042E13A4BC006E0C6E /* TypesOfProducts.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -88,6 +97,9 @@
 			children = (
 				8A7F105E2E12A0100086F5E0 /* HomeViewController.swift */,
 				8A7F10602E12A3300086F5E0 /* HeaderView.swift */,
+				8AC2FA022E13A3E8006E0C6E /* HomeViewController+Extension.swift */,
+				8AC2FA062E13A98A006E0C6E /* TypeOfProdCollectionViewCell.swift */,
+				8AC2FA072E13A98A006E0C6E /* TypeOfProdCollectionViewCell.xib */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -218,6 +230,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AC2FA082E13A98A006E0C6E /* TypeOfProdCollectionViewCell.xib in Resources */,
 				8A7F10512E1258950086F5E0 /* HomeTestVC.xib in Resources */,
 				8AA450BD2E0E945000CAB77B /* HomeOneCellTwo.xib in Resources */,
 				8AD7CA272E0E6C80006881BA /* Assets.xcassets in Resources */,
@@ -240,14 +253,17 @@
 				8AA450B82E0E909E00CAB77B /* HomeOneCellOne.swift in Sources */,
 				8AA450BC2E0E945000CAB77B /* HomeOneCellTwo.swift in Sources */,
 				8A7F10542E1268ED0086F5E0 /* UIView+Extension.swift in Sources */,
+				8AC2FA032E13A3E8006E0C6E /* HomeViewController+Extension.swift in Sources */,
 				8AD7CA1E2E0E6C7E006881BA /* AppDelegate.swift in Sources */,
 				8AA450C02E0EBAEF00CAB77B /* UIImage+Extenstion.swift in Sources */,
 				8A7F10502E1258950086F5E0 /* HomeTestVC.swift in Sources */,
 				8A7F10592E12708C0086F5E0 /* FoodTopBannerModel.swift in Sources */,
 				8AD7CA352E0E6C9E006881BA /* HomeOneView.swift in Sources */,
 				8AD7CA202E0E6C7E006881BA /* SceneDelegate.swift in Sources */,
+				8AC2FA092E13A98A006E0C6E /* TypeOfProdCollectionViewCell.swift in Sources */,
 				8A7F105F2E12A0100086F5E0 /* HomeViewController.swift in Sources */,
 				8A7F10562E126EA40086F5E0 /* HomeTestVC+Extension.swift in Sources */,
+				8AC2FA052E13A4BC006E0C6E /* TypesOfProducts.swift in Sources */,
 				8A7F10612E12A3300086F5E0 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

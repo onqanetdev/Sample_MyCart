@@ -16,7 +16,7 @@ class HeaderView: UIView {
     private let bellButton = UIButton(type: .system)
     private let deliveryLabel = UILabel()
     private let addressLabel = UILabel()
-    private let searchBar = UIView()
+    public let searchBar = UIView()
     private let searchTextField = UITextField()
     private let searchIconImageView = UIImageView()
     
@@ -186,12 +186,12 @@ class HeaderView: UIView {
             
             // Delivery label
             deliveryLabel.leadingAnchor.constraint(equalTo: hamburgerButton.trailingAnchor, constant: 16),
-            deliveryLabel.topAnchor.constraint(equalTo: hamburgerButton.bottomAnchor, constant: -44),
+            deliveryLabel.topAnchor.constraint(equalTo: hamburgerButton.bottomAnchor, constant: 14),
             deliveryLabel.trailingAnchor.constraint(lessThanOrEqualTo: bellButton.leadingAnchor, constant: -8),
             
             //Location View
             locationView.leadingAnchor.constraint(equalTo: hamburgerButton.leadingAnchor, constant: 16),
-            locationView.topAnchor.constraint(equalTo: deliveryLabel.bottomAnchor, constant: -50),
+            locationView.topAnchor.constraint(equalTo: deliveryLabel.bottomAnchor, constant: 5),
             locationView.widthAnchor.constraint(equalToConstant: 20),
             locationView.heightAnchor.constraint(equalToConstant: 20),
             
@@ -199,15 +199,16 @@ class HeaderView: UIView {
             
             // Address label
             addressLabel.leadingAnchor.constraint(equalTo: locationView.trailingAnchor, constant: 6),
-            addressLabel.topAnchor.constraint(equalTo: deliveryLabel.bottomAnchor, constant: -50),
+            addressLabel.centerYAnchor.constraint(equalTo: locationView.centerYAnchor, constant: 0),
+            //addressLabel.topAnchor.constraint(equalTo: deliveryLabel.bottomAnchor, constant: 5),
             addressLabel.trailingAnchor.constraint(lessThanOrEqualTo: containerView.trailingAnchor, constant: -16),
             
             // Search bar
             searchBar.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16),
             searchBar.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16),
-            searchBar.topAnchor.constraint(equalTo: addressLabel.bottomAnchor, constant: 20),
+            searchBar.topAnchor.constraint(equalTo: addressLabel.bottomAnchor, constant: 10),
             searchBar.heightAnchor.constraint(equalToConstant: 50),
-            searchBar.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -16),
+            //searchBar.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -16),
             
             // Search text field
             searchTextField.leadingAnchor.constraint(equalTo: searchBar.leadingAnchor, constant: 20),
