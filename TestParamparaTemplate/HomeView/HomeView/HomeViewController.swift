@@ -100,6 +100,7 @@ extension HomeViewController {
         }
         
         //layout.register(<#T##AnyClass?#>, forDecorationViewOfKind: <#T##String#>)
+        layout.register(SectionBackgroundView.self, forDecorationViewOfKind: SectionBackgroundView.elementKind)
         typeProductsCollectionView.setCollectionViewLayout(layout, animated: true)
     }
     
@@ -201,6 +202,13 @@ extension HomeViewController {
         section.boundarySupplementaryItems = [
             .init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(30)), elementKind: "Header", alignment: .top)
         ]
+        
+        
+        // Add background decoration item
+            let backgroundItem = NSCollectionLayoutDecorationItem.background(
+                elementKind: SectionBackgroundView.elementKind
+            )
+            section.decorationItems = [backgroundItem]
         
         return section
     }
