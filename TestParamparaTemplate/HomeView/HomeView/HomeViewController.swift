@@ -21,10 +21,14 @@ class HomeViewController: UIViewController {
         cv.register(TypeOfProdCollectionViewCell.self, forCellWithReuseIdentifier: TypeOfProdCollectionViewCell.cellIdentifier)
         cv.register(BannerCollectionViewCell.self, forCellWithReuseIdentifier: BannerCollectionViewCell.cellIdentifier)
         cv.register(GroceryCollectionViewCell.self, forCellWithReuseIdentifier: GroceryCollectionViewCell.cellIdentifier)
-        
         cv.register(TrendingProductCollectionViewCell.self, forCellWithReuseIdentifier: TrendingProductCollectionViewCell.cellIdentifier)
-        
         cv.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        
+        cv.register(GroceryKitchenHeaderView.self, forSupplementaryViewOfKind: "Header", withReuseIdentifier: GroceryKitchenHeaderView.headerIdentifier)
+        
+        cv.register(TrendingProductsHeaderView.self, forSupplementaryViewOfKind: "Header", withReuseIdentifier: TrendingProductsHeaderView.headerIdentifier)
+        cv.register(UICollectionReusableView.self, forSupplementaryViewOfKind: "Header", withReuseIdentifier: "EmptyHeader")
+
         cv.backgroundColor = .clear
         return cv
     }()
@@ -165,6 +169,10 @@ extension HomeViewController {
         section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 10, trailing: 0)
         
         //section.orthogonalScrollingBehavior = .continuous
+        section.boundarySupplementaryItems = [
+            .init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(30)), elementKind: "Header", alignment: .top)
+        ]
+        
         
         return section
     }
@@ -189,6 +197,10 @@ extension HomeViewController {
         section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 15, bottom: 10, trailing: 0)
         
         section.orthogonalScrollingBehavior = .continuous
+        
+        section.boundarySupplementaryItems = [
+            .init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(30)), elementKind: "Header", alignment: .top)
+        ]
         
         return section
     }

@@ -17,7 +17,7 @@ class TrendingProductCollectionViewCell: UICollectionViewCell {
         didSet {
             guard let cellData = cellData else {return}
             productTitle.text = cellData.productTitle
-            productPrice.text = cellData.productPrice
+            productPrice.text = "Rs." + cellData.productPrice + "/-"
             imgView.image = UIImage(named: cellData.productImg)
             
         }
@@ -27,7 +27,7 @@ class TrendingProductCollectionViewCell: UICollectionViewCell {
     private let cardView:UIView = {
         let vw = UIView()
         vw.translatesAutoresizingMaskIntoConstraints = false
-        vw.backgroundColor = .systemBrown
+        vw.backgroundColor = .systemGray6
         vw.layer.cornerRadius = 15
         vw.clipsToBounds = true
         return vw

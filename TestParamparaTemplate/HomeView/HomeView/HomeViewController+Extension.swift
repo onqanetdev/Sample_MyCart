@@ -70,4 +70,29 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == "Header" {
+            switch indexPath.section {
+            case 2:
+                let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: GroceryKitchenHeaderView.headerIdentifier, for: indexPath) as! GroceryKitchenHeaderView
+                //header.delegate = self
+                return header
+                
+            case 3:
+                let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: TrendingProductsHeaderView.headerIdentifier, for: indexPath) as! TrendingProductsHeaderView
+                //header.delegate = self
+                return header
+                
+            default:
+                let emptyHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "EmptyHeader", for: indexPath)
+                return emptyHeader
+            }
+        } else {
+            let emptyHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "EmptyHeader", for: indexPath)
+            return emptyHeader
+        }
+    }
+    
+    
+    
 }
