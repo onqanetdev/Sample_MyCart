@@ -24,11 +24,16 @@ class HomeViewController: UIViewController {
         cv.register(TrendingProductCollectionViewCell.self, forCellWithReuseIdentifier: TrendingProductCollectionViewCell.cellIdentifier)
         cv.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
         
-        cv.register(GroceryKitchenHeaderView.self, forSupplementaryViewOfKind: "Header", withReuseIdentifier: GroceryKitchenHeaderView.headerIdentifier)
         
+        //Header View Registering
+        
+        cv.register(GroceryKitchenHeaderView.self, forSupplementaryViewOfKind: "Header", withReuseIdentifier: GroceryKitchenHeaderView.headerIdentifier)
         cv.register(TrendingProductsHeaderView.self, forSupplementaryViewOfKind: "Header", withReuseIdentifier: TrendingProductsHeaderView.headerIdentifier)
+        
+        cv.register(AllProductsHeaderView.self, forSupplementaryViewOfKind: "Header", withReuseIdentifier: AllProductsHeaderView.headerIdentifier)
         cv.register(UICollectionReusableView.self, forSupplementaryViewOfKind: "Header", withReuseIdentifier: "EmptyHeader")
 
+        
         cv.backgroundColor = .clear
         return cv
     }()
@@ -122,9 +127,14 @@ extension HomeViewController {
            //Define Section which will Contain Group
            
            let section = NSCollectionLayoutSection(group: group)
-           section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 15, bottom: 10, trailing: 0)
+           section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0)
            
            section.orthogonalScrollingBehavior = .continuous
+           
+           section.boundarySupplementaryItems = [
+               .init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(250)), elementKind: "Header", alignment: .top)
+           ]
+           
            
            return section
        }

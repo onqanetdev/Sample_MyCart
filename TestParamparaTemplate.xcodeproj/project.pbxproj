@@ -39,6 +39,8 @@
 		8AD7A91A2E153B83007DC7CC /* TrendingProductsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AD7A9182E153B83007DC7CC /* TrendingProductsHeaderView.xib */; };
 		8AD7A91E2E155502007DC7CC /* SectionBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD7A91C2E155502007DC7CC /* SectionBackgroundView.swift */; };
 		8AD7A91F2E155502007DC7CC /* SectionBackgroundView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AD7A91D2E155502007DC7CC /* SectionBackgroundView.xib */; };
+		8AD7A9222E1557F9007DC7CC /* AllProductsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD7A9202E1557F9007DC7CC /* AllProductsHeaderView.swift */; };
+		8AD7A9232E1557F9007DC7CC /* AllProductsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AD7A9212E1557F9007DC7CC /* AllProductsHeaderView.xib */; };
 		8AD7CA1E2E0E6C7E006881BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD7CA1D2E0E6C7E006881BA /* AppDelegate.swift */; };
 		8AD7CA202E0E6C7E006881BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD7CA1F2E0E6C7E006881BA /* SceneDelegate.swift */; };
 		8AD7CA222E0E6C7E006881BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD7CA212E0E6C7E006881BA /* ViewController.swift */; };
@@ -82,6 +84,8 @@
 		8AD7A9182E153B83007DC7CC /* TrendingProductsHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrendingProductsHeaderView.xib; sourceTree = "<group>"; };
 		8AD7A91C2E155502007DC7CC /* SectionBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionBackgroundView.swift; sourceTree = "<group>"; };
 		8AD7A91D2E155502007DC7CC /* SectionBackgroundView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionBackgroundView.xib; sourceTree = "<group>"; };
+		8AD7A9202E1557F9007DC7CC /* AllProductsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllProductsHeaderView.swift; sourceTree = "<group>"; };
+		8AD7A9212E1557F9007DC7CC /* AllProductsHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllProductsHeaderView.xib; sourceTree = "<group>"; };
 		8AD7CA1A2E0E6C7E006881BA /* TestParamparaTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestParamparaTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AD7CA1D2E0E6C7E006881BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AD7CA1F2E0E6C7E006881BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -180,6 +184,8 @@
 				8AD7A9142E1515F2007DC7CC /* GroceryKitchenHeaderView.xib */,
 				8AD7A9172E153B83007DC7CC /* TrendingProductsHeaderView.swift */,
 				8AD7A9182E153B83007DC7CC /* TrendingProductsHeaderView.xib */,
+				8AD7A9202E1557F9007DC7CC /* AllProductsHeaderView.swift */,
+				8AD7A9212E1557F9007DC7CC /* AllProductsHeaderView.xib */,
 			);
 			path = SectionHeaderView;
 			sourceTree = "<group>";
@@ -312,6 +318,7 @@
 				8AC2FA172E1403A3006E0C6E /* GroceryCollectionViewCell.xib in Resources */,
 				8AD7A9162E1515F2007DC7CC /* GroceryKitchenHeaderView.xib in Resources */,
 				8AD7A91F2E155502007DC7CC /* SectionBackgroundView.xib in Resources */,
+				8AD7A9232E1557F9007DC7CC /* AllProductsHeaderView.xib in Resources */,
 				8AD7CA252E0E6C7E006881BA /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,6 +343,7 @@
 				8AC2FA182E1403A3006E0C6E /* GroceryCollectionViewCell.swift in Sources */,
 				8AC2FA032E13A3E8006E0C6E /* HomeViewController+Extension.swift in Sources */,
 				8AD7CA1E2E0E6C7E006881BA /* AppDelegate.swift in Sources */,
+				8AD7A9222E1557F9007DC7CC /* AllProductsHeaderView.swift in Sources */,
 				8AA450C02E0EBAEF00CAB77B /* UIImage+Extenstion.swift in Sources */,
 				8A7F10502E1258950086F5E0 /* HomeTestVC.swift in Sources */,
 				8A7F10592E12708C0086F5E0 /* FoodTopBannerModel.swift in Sources */,
