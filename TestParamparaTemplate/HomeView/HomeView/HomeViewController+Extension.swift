@@ -21,6 +21,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             return bannerAd.count
         case 2:
             return grocery.count
+        case 3:
+            return trendingProducts.count
         default:
             return 4
         }
@@ -28,7 +30,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        3
+        4
     }
     
     
@@ -51,6 +53,12 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GroceryCollectionViewCell.cellIdentifier, for: indexPath) as?
                     GroceryCollectionViewCell else {fatalError("Unable deque cell...")}
             cell.cellData = grocery[indexPath.row]
+            return cell
+            
+        case 3:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendingProductCollectionViewCell.cellIdentifier, for: indexPath) as?
+                    TrendingProductCollectionViewCell else {fatalError("Unable deque cell...")}
+            cell.cellData = trendingProducts[indexPath.row]
             return cell
             
         default:

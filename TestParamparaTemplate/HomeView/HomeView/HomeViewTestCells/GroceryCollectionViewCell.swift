@@ -27,7 +27,7 @@ class GroceryCollectionViewCell: UICollectionViewCell {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 15
         view.clipsToBounds = true
-        //view.backgroundColor = .
+        //view.backgroundColor = .systemGray
         return view
     }()
     
@@ -44,7 +44,7 @@ class GroceryCollectionViewCell: UICollectionViewCell {
     private let titleText: UILabel = {
         let title = UILabel()
         title.translatesAutoresizingMaskIntoConstraints = false
-        title.font = UIFont(name: "Helvetica", size: 15)
+        title.font = UIFont(name: "Helvetica", size: 12)
         title.numberOfLines = 2
         title.lineBreakMode = .byWordWrapping
         title.textAlignment = .center
