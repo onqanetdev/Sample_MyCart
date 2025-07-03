@@ -76,7 +76,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             case 0:
                 let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: AllProductsHeaderView.headerIdentifier, for: indexPath) as! AllProductsHeaderView
                 //header.delegate = self
-                header.backgroundColor = .yellow
+                header.backgroundColor = .clear
                 return header
                 
             case 2:
@@ -100,6 +100,19 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         }
     }
     
-    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        // Disable bounce only when at the top
+        if scrollView.contentOffset.y <= 0 {
+            if scrollView.bounces {
+                scrollView.bounces = false
+            }
+        } else {
+            if !scrollView.bounces {
+                scrollView.bounces = true
+            }
+        }
+    }
+
+
     
 }

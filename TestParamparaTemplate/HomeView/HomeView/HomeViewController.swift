@@ -9,7 +9,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    private let headerView = HeaderView()
+   // private let headerView = HeaderView()
     
     
     lazy var typeProductsCollectionView: UICollectionView = {
@@ -33,8 +33,11 @@ class HomeViewController: UIViewController {
         cv.register(AllProductsHeaderView.self, forSupplementaryViewOfKind: "Header", withReuseIdentifier: AllProductsHeaderView.headerIdentifier)
         cv.register(UICollectionReusableView.self, forSupplementaryViewOfKind: "Header", withReuseIdentifier: "EmptyHeader")
 
-        
+        cv.contentInsetAdjustmentBehavior = .never
         cv.backgroundColor = .clear
+        
+        //cv.dragInteractionEnabled = false
+       // cv.bouncesVertically = false
         return cv
     }()
     
@@ -45,31 +48,24 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        setupHeaderView()
+       // setupHeaderView()
+        
+        navigationController?.isNavigationBarHidden = true
+        navigationController?.navigationBar.isHidden = true
         configureUI()
         configureCompositionalLayout()
+        
     }
     
-    private func setupHeaderView() {
-        view.backgroundColor = .white
-        view.addSubview(headerView)
-        headerView.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            headerView.topAnchor.constraint(equalTo: view.topAnchor),
-            headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            headerView.heightAnchor.constraint(equalToConstant: 280) // Adjust height as needed
-        ])
-    }
+   
     
 
     private func configureUI() {
-        view.backgroundColor = .white
+        //view.backgroundColor = .white
         view.addSubview(typeProductsCollectionView)
         
         NSLayoutConstraint.activate([
-            typeProductsCollectionView.topAnchor.constraint(equalTo: headerView.searchBar.bottomAnchor, constant: 10),
+            typeProductsCollectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: -16),
             typeProductsCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
             typeProductsCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
             typeProductsCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0)
@@ -123,17 +119,24 @@ extension HomeViewController {
            
            let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(150), heightDimension: .absolute(40))
            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-           group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 15)
+           group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 0)
            //Define Section which will Contain Group
            
            let section = NSCollectionLayoutSection(group: group)
-           section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0)
+           section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 0)
            
            section.orthogonalScrollingBehavior = .continuous
            
            section.boundarySupplementaryItems = [
                .init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(250)), elementKind: "Header", alignment: .top)
            ]
+           
+           
+           // Add background decoration item
+               let backgroundItem = NSCollectionLayoutDecorationItem.background(
+                   elementKind: SectionBackgroundView.elementKind
+               )
+               section.decorationItems = [backgroundItem]
            
            
            return section
@@ -185,6 +188,8 @@ extension HomeViewController {
         ]
         
         
+        
+        
         return section
     }
     
@@ -215,10 +220,11 @@ extension HomeViewController {
         
         
         // Add background decoration item
-            let backgroundItem = NSCollectionLayoutDecorationItem.background(
-                elementKind: SectionBackgroundView.elementKind
-            )
-            section.decorationItems = [backgroundItem]
+        
+//            let backgroundItem = NSCollectionLayoutDecorationItem.background(
+//                elementKind: SectionBackgroundView.elementKind
+//            )
+//            section.decorationItems = [backgroundItem]
         
         return section
     }

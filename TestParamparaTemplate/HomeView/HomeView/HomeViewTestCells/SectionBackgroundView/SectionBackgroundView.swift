@@ -12,8 +12,9 @@ class SectionBackgroundView: UICollectionReusableView {
     
     private let backgroundImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill   // or .scaleToFill, as needed
+        imageView.contentMode = .scaleToFill   // or .scaleToFill, as needed
         imageView.clipsToBounds = true
+        imageView.layer.masksToBounds = true
         imageView.image = UIImage(named: "header_background")
         return imageView
     }()
@@ -31,8 +32,8 @@ class SectionBackgroundView: UICollectionReusableView {
             backgroundImageView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
 
-        layer.cornerRadius = 10    // Optional
-        layer.masksToBounds = true
+//        layer.cornerRadius = 10    // Optional
+//        layer.masksToBounds = true
     }
 
     required init?(coder: NSCoder) {

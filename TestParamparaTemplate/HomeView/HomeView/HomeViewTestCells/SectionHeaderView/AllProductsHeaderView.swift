@@ -29,35 +29,16 @@ class AllProductsHeaderView: UICollectionReusableView {
         return imageView
     }()
     
-//    private let backgroundImageView: UIImageView = {
-//        let imageView = UIImageView()
-//        imageView.translatesAutoresizingMaskIntoConstraints = false
-//        imageView.contentMode = .scaleAspectFill
-//        imageView.clipsToBounds = true
-//        imageView.image = UIImage(named: "header_background")
-//        return imageView
-//    }()
-    
-    
-    
-    
-    
-    
-    
+
+
     // MARK: - Initialization
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
         setupConstraints()
-        configureAppearance()
     }
     
-//    required init?(coder: NSCoder) {
-//        super.init(coder: coder)
-//        setupView()
-//        setupConstraints()
-//        configureAppearance()
-//    }
+
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -75,7 +56,7 @@ class AllProductsHeaderView: UICollectionReusableView {
         
         //containerView.addSubview(backgroundImageView)
         
-        containerView.backgroundColor = .systemRed
+        containerView.backgroundColor = .clear
         
         containerView.addSubview(hamburgerButton)
         containerView.addSubview(cartButton)
@@ -234,18 +215,7 @@ class AllProductsHeaderView: UICollectionReusableView {
         ])
     }
     
-    private func configureAppearance() {
-        // Add gradient background
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [
-            UIColor(red: 0.8, green: 0.7, blue: 0.9, alpha: 1.0).cgColor,
-            UIColor(red: 0.7, green: 0.6, blue: 0.8, alpha: 1.0).cgColor
-        ]
-        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
-        gradientLayer.endPoint = CGPoint(x: 1, y: 1)
-        gradientLayer.frame = bounds
-        layer.insertSublayer(gradientLayer, at: 0)
-    }
+    
     
     override func layoutSubviews() {
         super.layoutSubviews()
