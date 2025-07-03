@@ -128,7 +128,7 @@ extension HomeViewController {
            section.orthogonalScrollingBehavior = .continuous
            
            section.boundarySupplementaryItems = [
-               .init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(250)), elementKind: "Header", alignment: .top)
+               .init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .estimated(220)), elementKind: "Header", alignment: .top)
            ]
            
            
