@@ -47,7 +47,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = #colorLiteral(red: 0.9505864978, green: 0.9303696752, blue: 0.9908335805, alpha: 1)
        // setupHeaderView()
         
         navigationController?.isNavigationBarHidden = true
@@ -219,12 +219,7 @@ extension HomeViewController {
         ]
         
         
-        // Add background decoration item
         
-//            let backgroundItem = NSCollectionLayoutDecorationItem.background(
-//                elementKind: SectionBackgroundView.elementKind
-//            )
-//            section.decorationItems = [backgroundItem]
         
         return section
     }

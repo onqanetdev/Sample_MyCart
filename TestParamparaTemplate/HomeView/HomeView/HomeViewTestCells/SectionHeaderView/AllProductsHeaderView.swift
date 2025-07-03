@@ -143,15 +143,8 @@ class AllProductsHeaderView: UICollectionReusableView {
         searchIconImageView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            
-//            backgroundImageView.topAnchor.constraint(equalTo: containerView.topAnchor),
-//            backgroundImageView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
-//            backgroundImageView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
-//            backgroundImageView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
-            
-            
-            
-            
+
+                        
             // Container view
             containerView.topAnchor.constraint(equalTo: topAnchor),
             containerView.leadingAnchor.constraint(equalTo: leadingAnchor),

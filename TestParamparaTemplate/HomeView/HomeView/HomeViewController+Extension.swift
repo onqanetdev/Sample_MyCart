@@ -47,18 +47,21 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BannerCollectionViewCell.cellIdentifier, for: indexPath) as?
                     BannerCollectionViewCell else {fatalError("Unable deque cell...")}
             cell.cellData = bannerAd[indexPath.row]
+            cell.backgroundColor = .clear
             return cell
             
         case 2:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GroceryCollectionViewCell.cellIdentifier, for: indexPath) as?
                     GroceryCollectionViewCell else {fatalError("Unable deque cell...")}
             cell.cellData = grocery[indexPath.row]
+            cell.backgroundColor = .clear
             return cell
             
         case 3:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendingProductCollectionViewCell.cellIdentifier, for: indexPath) as?
                     TrendingProductCollectionViewCell else {fatalError("Unable deque cell...")}
             cell.cellData = trendingProducts[indexPath.row]
+            cell.backgroundColor = .clear
             return cell
             
         default:
@@ -81,12 +84,12 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 
             case 2:
                 let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: GroceryKitchenHeaderView.headerIdentifier, for: indexPath) as! GroceryKitchenHeaderView
-                //header.delegate = self
+                header.backgroundColor = .clear
                 return header
                 
             case 3:
                 let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: TrendingProductsHeaderView.headerIdentifier, for: indexPath) as! TrendingProductsHeaderView
-               // header.backgroundColor = .clear
+                header.backgroundColor = .clear
                 //header.delegate = self
                 return header
                 

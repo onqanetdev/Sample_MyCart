@@ -27,7 +27,7 @@ class TrendingProductCollectionViewCell: UICollectionViewCell {
     private let cardView:UIView = {
         let vw = UIView()
         vw.translatesAutoresizingMaskIntoConstraints = false
-        vw.backgroundColor = .systemGray6
+        vw.backgroundColor = .white
         vw.layer.cornerRadius = 15
         vw.clipsToBounds = true
         return vw
@@ -37,6 +37,7 @@ class TrendingProductCollectionViewCell: UICollectionViewCell {
         let img = UIImageView()
         img.translatesAutoresizingMaskIntoConstraints = false
         img.layer.cornerRadius = 15
+        img.contentMode = .scaleToFill
         img.clipsToBounds = true
         return img
     }()
@@ -95,9 +96,9 @@ class TrendingProductCollectionViewCell: UICollectionViewCell {
             cardView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0),
             cardView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0),
             
-            imgView.topAnchor.constraint(equalTo: cardView.topAnchor, constant: -5),
-            imgView.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 3),
-            imgView.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -5),
+            imgView.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 10),
+            imgView.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 10),
+            imgView.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -10),
             imgView.bottomAnchor.constraint(equalTo: cardView.bottomAnchor, constant: -50),
             
             

@@ -27,7 +27,7 @@ class GroceryCollectionViewCell: UICollectionViewCell {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 15
         view.clipsToBounds = true
-        //view.backgroundColor = .systemGray
+        view.backgroundColor = .clear
         return view
     }()
     
@@ -37,6 +37,7 @@ class GroceryCollectionViewCell: UICollectionViewCell {
         imgView.translatesAutoresizingMaskIntoConstraints = false
         imgView.layer.cornerRadius = 10
         imgView.clipsToBounds = true
+        imgView.backgroundColor = .clear
         return imgView
     }()
     
